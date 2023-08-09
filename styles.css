@@ -1,0 +1,109 @@
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: #181818;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: #1DB954;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#search {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.song-list {
+  flex: 2;
+  background-color: #282828;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+
+.info-box {
+  flex: 1;
+  background-color: #282828;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.ad-box {
+  flex: 1;
+  background-color: #282828;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .song-list {
+    flex: 1;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .info-box,
+  .ad-box {
+    flex: 1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Fetch Songs Button */
+#fetch-songs-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#fetch-songs-btn:hover {
+  background-color: #181818;
+  color: black;
+}
