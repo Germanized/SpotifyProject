@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css"> <!-- Include the link to your CSS stylesheet -->
+  <title>Top 100 Songs</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Top 100 Most Streamed Songs This Week</h1>
+    </header>
+    <main class="main-content">
+      <section class="song-list">
+        <h2 class="section-title">Top Streamed Songs</h2>
+        <ul id="top-songs-list"></ul>
+        <button id="fetch-songs-btn">Fetch Songs</button>
+      </section>
+      <section class="info-box">
+        <h2 class="section-title">About this Website</h2>
+        <p>This website was made by Ethan Gonzalez and Ryan Gambino for our website/project in AP Computer Science principles. It didn't take long to code, so here it is.</p>
+      </section>
+    </main>
+    <section class="ad-box">
+      <h2 class="section-title">Advertise Here</h2>
+      <p>Your ad content goes here.</p>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById("fetch-songs-btn").addEventListener("click", async () => {
+      const response = await fetch("/fetch_songs");
+      if (response.ok) {
+        const data = await response.text();
+        document.getElementById("top-songs-list").innerHTML = data;
+      } else {
+        console.error("Error fetching songs:", response.statusText);
+      }
+    });
+  </script>
+</body>
+</html>
